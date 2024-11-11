@@ -28,26 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listView1 = new ListView();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             SuspendLayout();
             // 
-            // listView1
+            // flowLayoutPanel1
             // 
-            listView1.BorderStyle = BorderStyle.None;
-            listView1.Dock = DockStyle.Bottom;
-            listView1.FullRowSelect = true;
-            listView1.Location = new Point(0, 268);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(775, 150);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.List;
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Dock = DockStyle.Bottom;
+            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel1.Location = new Point(0, 285);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(775, 133);
+            flowLayoutPanel1.TabIndex = 0;
+            flowLayoutPanel1.WrapContents = false;
             // 
             // OverviewMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(listView1);
+            Controls.Add(flowLayoutPanel1);
             Name = "OverviewMenu";
             Size = new Size(775, 418);
             Load += OverviewMenu_Load;
@@ -56,6 +55,6 @@
 
         #endregion
 
-        private ListView listView1;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

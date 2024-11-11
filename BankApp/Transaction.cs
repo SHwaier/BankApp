@@ -18,16 +18,19 @@ namespace BankApp
         UNSUCCESSFUL,
         PENDING
     }
-    internal class Transaction
+    public class Transaction
     {
-        public STATUS status;
-        public OPERATION operationAttempted;
-        public DateTime dateTime;
-        public string details;
+        public STATUS status { get; set; }
+        public OPERATION operationAttempted { get; private set; }
+        public DateTime dateTime { get; private set; }
+        public string details { get; private set; }
+
+        public double amount { get; private set; }
+
         private static int _id;
         public int id { get; private set; }
 
-        public Transaction(STATUS status, OPERATION operation, string details)
+        public Transaction(STATUS status, OPERATION operation, string details, double amount)
         {
             dateTime = DateTime.Now;
             id = _id;
@@ -35,11 +38,11 @@ namespace BankApp
             this.status = status;
             operationAttempted = operation;
             this.details = details;
+            this.amount = amount;
         }
         public override string ToString()
         {
             return "Transaction #" + id;
         }
     }
-
 }

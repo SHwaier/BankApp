@@ -31,15 +31,15 @@ namespace BankApp
             Transaction transaction;
             if (amount <= 0)
             {
-                transaction = new Transaction(STATUS.UNSUCCESSFUL, OPERATION.WITHDRAW, "Attempted withdrawing $0.");
+                transaction = new Transaction(STATUS.UNSUCCESSFUL, OPERATION.WITHDRAW, "Declined due to invalid input!", amount);
                 return 0;
             }
             else if (amount > funds)
             {
-                transaction = new Transaction(STATUS.UNSUCCESSFUL, OPERATION.WITHDRAW, "Insufficient Funds.");
+                transaction = new Transaction(STATUS.UNSUCCESSFUL, OPERATION.WITHDRAW, "Declind due to insufficient Funds.", amount);
                 throw new ArgumentException("Insufficient Funds!");
             }
-            transaction = new Transaction(STATUS.SUCCESSFUL, OPERATION.WITHDRAW, "A withdraw of $" + amount + " was made.");
+            transaction = new Transaction(STATUS.SUCCESSFUL, OPERATION.WITHDRAW, "A withdraw of $" + amount + " was made.", amount);
             funds -= amount;
             transactions.AddFirst(transaction);
             return amount;
@@ -50,10 +50,10 @@ namespace BankApp
             Transaction transaction;
             if (amount <= 0)
             {
-                transaction = new Transaction(STATUS.UNSUCCESSFUL, OPERATION.DEPOSIT, "Attempted deposit $0.");
+                transaction = new Transaction(STATUS.UNSUCCESSFUL, OPERATION.DEPOSIT, "Declined due to invalid input!", amount);
                 return;
             }
-            transaction = new Transaction(STATUS.SUCCESSFUL, OPERATION.DEPOSIT, "Successfully deposited $" + amount + ".");
+            transaction = new Transaction(STATUS.SUCCESSFUL, OPERATION.DEPOSIT, "Successfully deposited $" + amount + ".", amount);
             funds += amount;
         }
 

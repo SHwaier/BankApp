@@ -16,5 +16,10 @@ namespace BankApp
         {
             InitializeComponent();
         }
+
+        private void SettingsMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

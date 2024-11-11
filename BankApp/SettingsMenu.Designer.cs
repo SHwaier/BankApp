@@ -47,6 +47,7 @@
             Controls.Add(label1);
             Name = "SettingsMenu";
             Size = new Size(922, 545);
+            Load += SettingsMenu_Load;
             ResumeLayout(false);
             PerformLayout();
         }
